@@ -21,3 +21,4 @@ private Integer id;
  private Integer cantidad;
  private String  fechaEntrada;
 }
+// comentario de prueba
