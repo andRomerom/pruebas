@@ -22,6 +22,3 @@ git push --> sube los cambios al repositorio remoto
 
 // Agregar una rama secundaria al repositorio remoto
 git push --set-upstream origin rama_secundaria 
-
-// para saber en que rama estoy..
-git branch --show-current
