@@ -42,10 +42,21 @@ public class VentaController_V2 {
            EntityModel<Venta> entityModel = assembler.toModel(venta);
            return ResponseEntity.created(linkTo(methodOn(VentaController_V2.class).getCarreraByCodigo(venta.getId())).toUri()).body(entityModel);
        }
-       // public ResponseEntity<EntityModel<Venta>> getVentaById(@RequestBody Venta venta) {
-               // Venta newVenta = 
-       //        ventaService.createVenta(venta);
-       // return ResponseEntity.created(linkTo(methodOn(VentaController_V2.class).getVentaById(newVenta.getId())).toUri()).body(assembler.toModel(newVenta));
+       
+    //Actualiza una venta existente
+        @PutMapping(value = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
+        public ResponseEntity<EntityModel<Venta>> updateVenta(@PathVariable int id, @RequestBody Venta venta) {
+            ventaService.updateVenta(id, venta);
+            EntityModel<Venta> entityModel = assembler.toModel(venta);
+            return ResponseEntity.ok(entityModel);
+        }
+
+     // Elimina una venta por id
+        @DeleteMapping(value = "/{id}", produces = MediaTypes.HAL_JSON_VALUE)
+        public ResponseEntity<Void> deleteVenta(@PathVariable int id) {
+            ventaService.deleteVenta(id);
+            return ResponseEntity.noContent().build();
+        }   
 }
 
 
