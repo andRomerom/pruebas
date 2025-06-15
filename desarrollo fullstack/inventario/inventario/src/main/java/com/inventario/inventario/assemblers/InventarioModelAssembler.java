@@ -4,7 +4,7 @@ import com.inventario.inventario.Inventario.InventarioController_V2;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
-import java.util.List;
+
 import com.inventario.inventario.Inventario.Inventario;
 
 @Component
